@@ -52,35 +52,80 @@ namespace Inlamningsuppgift02
         }
         
         //-StartMenu-metod-Do While
-
         static void StartMenu() 
         {
-            Console.WriteLine("a. Lista med alla deltagare");
-            Console.WriteLine("b. Information om deltagare");
-            Console.WriteLine("c. Ta bort deltagare");
-            Console.WriteLine("d. Avsluta programmet");
+            bool run = true;
+            do
+            {
+                Console.WriteLine("a. Lista med alla deltagare");
+                Console.WriteLine("b. Information om deltagare");
+                Console.WriteLine("c. Ta bort deltagare");
+                Console.WriteLine("d. Avsluta programmet");
 
-            string userChoice = Console.ReadLine();
-            Console.WriteLine("---------------------------");
+                string userChoice = Console.ReadLine();
+                Console.WriteLine("---------------------------");
+                //Switch
+                //Case 1 - MembersList();
+                //Case 2 - MemberInfo();
+                //Case 3 - RemoveMember();
+                //Case 4 - Avsluta program
+                switch (userChoice)
+                {
+                    case "a":
+                        MembersList();
+                        break;
 
+                    case "b":
+                        MemberInfo();
+                        break;
+
+                    case "c":
+                        RemoveMember();
+                        break;
+
+                    case "d":
+                        Quit();
+                        run = false;
+                        break;
+                }
+            } while (run);
         }
 
-        //Switch
-        //Case 1 - MembersList();
-        //Case 2 - MemberInfo();
-        //Case 3 - RemoveMember();
-        //Case 4 - Avsluta program
-
         //-MemberList-metod-
-        //Skapa lista av human
-        //Gör en for each-loop som listar upp medlemar
+        static void MembersList()
+        {
+            
+            //Skapa lista av human
+            //Gör en for each-loop som listar upp medlemar
+            Console.WriteLine("Bästkustens medlemmar: ");
+            Console.WriteLine("---------------------------");
+        }
 
         //-MemberInfo-metod-
-        //Lägg till medlemsinfo i lista "Member"
+        static void MemberInfo()
+        {
+            
+            //Lägg till medlemsinfo i lista "Member"
+            Console.WriteLine("Skriv namnet på medlemmen som du vill få ut info om: ");
+            Console.Write("Namn:");
+            Console.WriteLine("---------------------------");
+        }
 
         //-RemoveMember-metod-
-        //Tar bort vald medlem från listan, använd en for-loop och be user om nummer från member-lista
+        static void RemoveMember()
+        {
+            
+            //Tar bort vald medlem från listan, använd en for-loop och be user om nummer från member-lista
+            Console.WriteLine("Skriv namnet på den medlem som ska tas bort:");
+            Console.Write("Namn:");
+            Console.WriteLine("---------------------------");
+        }
 
+        //-Quit-metod
+        static void Quit()
+        {
+            Console.WriteLine("Du valde att avsluta, tack och hej");
+        }
 
     }
 }
