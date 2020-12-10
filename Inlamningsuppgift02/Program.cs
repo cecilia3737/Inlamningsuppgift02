@@ -192,6 +192,16 @@ namespace Inlamningsuppgift02
             //Tar bort vald medlem från listan, använd en for-loop och be user om namn från member-lista
             Console.WriteLine("Skriv namnet på den medlem som ska tas bort:");
             Console.Write("Namn:");
+            string choice = Console.ReadLine();
+
+            for (int i = 0; i < bästkustenMembers.Count; i++)
+            {
+                if (choice == bästkustenMembers[i].Name)
+                {
+                    bästkustenMembers.RemoveAt(i);
+                    Console.WriteLine("Du har nu tagit bort medlemmen från gruppen");
+                }
+            }
             Console.WriteLine("---------------------------");
         }
 
@@ -200,6 +210,5 @@ namespace Inlamningsuppgift02
         {
             Console.WriteLine("Du valde att avsluta, tack och hej");
         }
-
     }
 }
