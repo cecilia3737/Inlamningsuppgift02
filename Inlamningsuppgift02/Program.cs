@@ -48,22 +48,18 @@ namespace Inlamningsuppgift02
 
         static void Main(string[] args)
         {
-
             Password();
             MembersList();
             StartMenu();
-
         }
 
-        //-Password-metod-
+        //-Password--Ber användare om lösenord vid start
         static void Password()
         {
             Console.WriteLine(" Välkommen, logga in för att se detaljer om gruppens deltagare.");
             bool run = true;
-
             do
             {
-
                 Console.Write(" Lösenord: ");
                 string password = Console.ReadLine();
 
@@ -73,7 +69,6 @@ namespace Inlamningsuppgift02
                     Console.WriteLine("---------------------------");
                     run = false;
                 }
-
                 else
                 {
                     Console.WriteLine(" Fel lösenord, försök igen!");
@@ -82,7 +77,7 @@ namespace Inlamningsuppgift02
             } while (run == true);
         }
 
-        //-StartMenu-metod-Do While
+        //-StartMenu--Navigerar i programmet och ber användare om olika val
         static void StartMenu()
         {
             bool run = true;
@@ -121,7 +116,7 @@ namespace Inlamningsuppgift02
                 }
             } while (run);
         }
-        //lista av Member
+        //-MemberList--Innehåller information om varje medlem
         static void MembersList()
         {
             Member Cecilia = new Member("Cecilia", 29, 163, "Norrköping", "Norrköping", 1, "Gul", "Risotto", "Spela The Sims", "Få arbeta kreativt");
@@ -146,11 +141,9 @@ namespace Inlamningsuppgift02
             bästkustenMembers.Add(Rami);
             bästkustenMembers.Add(Sanjin);
         }
-        //-MemberList-metod-
+        //-ShowMemberList--Visar lista på medlemmarnas namn i konsol
         static void ShowMembersList()
         {
-
-            //Gör en for-loop som listar upp medlemar
             Console.WriteLine(" Bästkustens medlemmar: ");
 
             for (int i = 0; i < bästkustenMembers.Count; i++)
@@ -161,11 +154,9 @@ namespace Inlamningsuppgift02
             Console.WriteLine("---------------------------");
         }
 
-        //-MemberInfo-metod-
+        //-MemberInfo--Frågar om en specifik medlem och tar fram information om denne
         static void MemberInfo()
         {
-
-            //Lägg till medlemsinfo i lista "Member"
             Console.WriteLine(" Skriv namnet på medlemmen som du vill få ut info om: ");
             Console.Write(" Namn:");
             string choice = Console.ReadLine();
@@ -192,11 +183,9 @@ namespace Inlamningsuppgift02
             Console.WriteLine("---------------------------");
         }
 
-        //-RemoveMember-metod-
+        //-RemoveMember--Tar bort medlem från lista
         static void RemoveMember()
         {
-
-            //Tar bort vald medlem från listan, använd en for-loop och be user om namn från member-lista
             Console.WriteLine(" Skriv namnet på den medlem som ska tas bort:");
             Console.Write(" Namn:");
             string choice = Console.ReadLine();
@@ -216,7 +205,7 @@ namespace Inlamningsuppgift02
             Console.WriteLine("---------------------------");
         }
 
-        //-Quit-metod
+        //-Quit--Avslutar programmet
         static void Quit()
         {
             Console.WriteLine(" Du valde att avsluta, tack och hej");
